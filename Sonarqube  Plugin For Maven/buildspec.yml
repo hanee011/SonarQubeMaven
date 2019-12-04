@@ -1,0 +1,23 @@
+version: 0.1
+
+env:
+  parameter-store:
+    SONAR_LOGIN: "MY_SONARQUBE_AUTHTOKEN"
+    SONAR_HOST: "MY_SONARQUBE_URL"
+
+phases:
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn test
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - mvn sonar:sonar -Dsonar.login=$SONAR_LOGIN -Dsonar.host.url=$SONAR_HOST
+      - mvn package
+      
+artifacts:
+  files:
+    - target/aws-build-sample-maven-project-0.0.1-SNAPSHOT.jar
+    
+    
