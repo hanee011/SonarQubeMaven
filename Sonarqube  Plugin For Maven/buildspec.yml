@@ -2,8 +2,8 @@ version: 0.1
 
 env:
   parameter-store:
-    SONAR_LOGIN: "MY_SONARQUBE_AUTHTOKEN"
-    SONAR_HOST: "MY_SONARQUBE_URL"
+    SONAR_LOGIN: 4b10472faeabd02e136783eba7a052c02e0ff79a
+    SONAR_HOST: http://ec2-3-87-142-74.compute-1.amazonaws.com
 
 phases:
   build:
